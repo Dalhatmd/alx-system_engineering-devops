@@ -1,1 +1,1 @@
-Directory for projects involving shell permissions
+Writing several scripts for my projects
