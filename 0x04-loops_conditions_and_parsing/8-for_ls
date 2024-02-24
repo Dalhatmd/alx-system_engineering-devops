@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#A script that prints all items in current directory after the first dash
+
+for file in *; do
+	if [ ! -h "$file" ] && [ -f "$file" ]; then
+		name=$(echo "$file" | cut -d'-' -f2-)
+		echo "$name"
+	fi
+done
