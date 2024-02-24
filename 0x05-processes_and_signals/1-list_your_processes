@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#script that lists processess
+
+ps axjf --forest
