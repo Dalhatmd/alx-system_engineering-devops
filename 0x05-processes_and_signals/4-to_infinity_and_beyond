@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Prints "To infininty and beyond" indefinitely
+
+string="To infinity and beyond"
+count=1
+while [ $count ]; do
+	echo "$string"
+	sleep 2
+done
