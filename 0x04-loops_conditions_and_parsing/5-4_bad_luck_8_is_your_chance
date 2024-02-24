@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# prints "Best School" 10 times, prints "bad luck" on 4th iteration, "good luck"
+
+string="Best School"
+counter=0
+
+while [ $counter -lt 10 ]; do
+	if [ $counter -eq 4 ]; then
+		echo -e "bad luck"
+	elif [ $counter -eq 8 ]; then
+		echo -e "good luck"
+	else
+		echo "$string"
+	fi
+	((counter++))
+done
