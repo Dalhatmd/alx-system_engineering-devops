@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#This prints best school 10 times and prints Hi on 9th iteration
+
+string="Best School"
+counter=0
+
+while [ $counter -lt 10 ]; do
+	if [ $counter -eq 8 ]; then
+		echo -e "$string\nHi"
+	else
+		echo "$string"
+	fi
+	((counter++))
+done
