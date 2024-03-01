@@ -8,6 +8,6 @@ facebook_ip="8.8.8.8"
 cp /etc/hosts ~/hosts.new
 
 echo "$localhost_ip	localhost" > ~/hosts.new
-echo "$facebook_ip	facebook" >> ~/hosts.new
+echo "$facebook_ip	facebook.com" >> ~/hosts.new
 
 cp -f ~/hosts.new /etc/hosts
