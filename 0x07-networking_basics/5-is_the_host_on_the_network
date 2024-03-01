@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 #pings first argument five times
 
 if [ "$1" == "" ]; then
