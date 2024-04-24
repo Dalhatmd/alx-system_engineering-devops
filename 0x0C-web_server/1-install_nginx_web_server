@@ -6,3 +6,4 @@ sudo apt-get -y nginx;
 ufw allow 'Nginx HTTP'
 sudo rm /var/www/html/index.nginx-debian.html;
 sudo echo "<!Doctype html> <html> <body> <p>Hello World!</p> </body> </html>" >> /var/www/html/hello.html
+service nginx start
