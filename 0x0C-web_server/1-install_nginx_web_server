@@ -2,7 +2,7 @@
 # installs an nginx web server
 
 sudo apt-get update;
-sudo apt-get -y nginx;
+sudo apt-get -y install nginx;
 ufw allow 'Nginx HTTP'
 sudo echo "<!Doctype html> <html> <body> <p>Hello World!</p> </body> </html>" > /var/www/html/index.html
 service nginx start
