@@ -1,4 +1,4 @@
-#!/usr/bin/bash env
+#!/usr/bin/env bash
 # configures nginx on a brand new ubuntu server
 
 sudo apt-get update
