@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Fixes a bug where apache does not run
+sudo service apache start
