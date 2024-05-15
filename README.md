@@ -1,1 +1,1 @@
-A repository for Mysql projects on the server
+A repository for System engineering projects
