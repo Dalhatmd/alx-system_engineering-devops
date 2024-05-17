@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# configures Nginx to run as nginx
+
+# replace user in config file
+sed -i "s/#user www-data/user nginx/" /etc/nginx/nginx.conf
+
+#replace port in /etc/nginx/sites-enabled/default
+sed -i "s/80/8080/g" /etc/nginx/sites-enabled/default
+
+#give nginx user permissions
+chmod 644 /etc/nginx/nginx.conf
+chmod 644 /etc/nginx/sies-enabled/default
+
+#kill apache
+pkill apache2
+
+# start nginx with new user
+sudo -u nginx service nginx start
