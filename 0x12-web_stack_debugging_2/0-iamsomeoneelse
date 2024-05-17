@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Runs whoami on the first argument
+
+su "$1"
+whoami
