@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" module that gets all users from an API """
 import json
 import requests
 
