@@ -14,21 +14,15 @@ def gather_data():
     employee = requests.get(employee_url).json()
     todos = requests.get(todo_url).json()
 
-    employee_name = employee.get("name")
+    emp_name = employee.get("name")
     completed_tasks = [todo for todo in todos if todo.get('completed')]
 
-    total = len(todos)
-    completed = len(completed_tasks)
+    with open('{}.csv'.format(user_id), 'w') as file:
+        for task in todos:
+            file.write('"{}","{}","{}","{}"\n'
+                       .format(user_id, emp_name, task.get('completed'),
+                               task.get('title')))
 
-    print(f"Employee {employee_name} is done with tasks({completed}/{total}):")
-    for task in completed_tasks:
-        print(f'\t {task["title"]}')
-
-    rows = [[employee_name, todo['title'] , todo['completed']] for todo in todos]
-
-    with open('USER_ID.csv', 'w') as f:
-        writer = csv.writer(f)
-        writer.writerow(rows)
 
 if __name__ == '__main__':
     gather_data()
