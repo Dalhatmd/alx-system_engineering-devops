@@ -1,23 +1,27 @@
 #!/usr/bin/python3
-""" Module that gather data from an API """
+""" Module that gathers data from an API """
 import requests
 import sys
 
 
 def gather_data():
-    """ retrieves data from an API """
-    employee_url = f"https://jsonplaceholder.typicode.com/users/{sys.argv[1]}"
-    todo_url = f"https://jsonplaceholder.typicode.com/todos?userId\
-            ={sys.argv[1]}"
+    """ Retrieves data from an API """
+    user_id = sys.argv[1]
+    employee_url = f"https://jsonplaceholder.typicode.com/users/{user_id}"
+    todo_url = f"https://jsonplaceholder.typicode.com/todos?userId={user_id}"
+
     employee = requests.get(employee_url).json()
     todos = requests.get(todo_url).json()
+
     employee_name = employee.get("name")
-    completed = sum(1 for todo in todos if todo.get("completed"))
+    completed_tasks = [todo for todo in todos if todo.get('completed')]
+
     total = len(todos)
+    completed = len(completed_tasks)
+
     print(f"Employee {employee_name} is done with tasks({completed}/{total}):")
-    for todo in todos:
-        if todo.get('completed'):
-            print(f'\t {todo["title"]}')
+    for task in completed_tasks:
+        print(f'\t {task["title"]}')
 
 
 if __name__ == '__main__':
