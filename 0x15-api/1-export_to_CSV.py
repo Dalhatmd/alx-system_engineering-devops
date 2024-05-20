@@ -14,12 +14,13 @@ def gather_data():
     employee = requests.get(employee_url).json()
     todos = requests.get(todo_url).json()
 
-    emp_name = employee.get("name")
+    emp_name = employee.get("username")
 
     with open('{}.csv'.format(user_id), 'w', newline='') as file:
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         for task in todos:
-            writer.writerow([user_id, emp_name, task.get('completed'), task.get('title')])
+            writer.writerow([user_id, emp_name, task.get('completed'),
+                            task.get('title')])
 
 
 if __name__ == '__main__':
