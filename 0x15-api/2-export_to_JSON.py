@@ -19,7 +19,7 @@ def gather_data():
     for todo in todos:
         if todo.get('completed'):
             print(f'\t{todo["title"]}')
-    dict = {"USER_ID": [{"task": todo["title"], "cpmpleted": todo["completed"],
+    dict = {sys.argv[1]: [{"task": todo["title"], "cpmpleted": todo["completed"],
                         "username": employee_name} for todo in todos]}
     with open('USER_ID.json', 'w') as f:
         json.dump(dict, f)

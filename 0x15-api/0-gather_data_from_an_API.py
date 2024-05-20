@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ Module that gather data from an API """
 import requests
-import json
 import sys
 
 
@@ -18,7 +17,7 @@ def gather_data():
     print(f"Employee {employee_name} is done with tasks({completed}/{total}):")
     for todo in todos:
         if todo.get('completed'):
-            print(f'\t{todo["title"]}')
+            print(f'\t {todo["title"]}')
 
 
 if __name__ == '__main__':
