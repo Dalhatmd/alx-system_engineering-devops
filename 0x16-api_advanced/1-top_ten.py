@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Prints the top ten hot posts in a given subreddit """
 import json
 import requests
 
@@ -21,4 +22,4 @@ def top_ten(subreddit):
         else:
             print('None')
     except requests.exceptions.RequestException as e:
-        print('None1')
+        print('None')
