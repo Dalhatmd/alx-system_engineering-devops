@@ -4,6 +4,7 @@ import requests
 
 
 def top_ten(subreddit):
+    """ gets the top ten hot posts of a subreddit """
     header = {"User-agent": "Google Chrome Version 81.0.4044.129"}
 
     url = f'https://www.reddit.com/r/{subreddit}/hot.json'
