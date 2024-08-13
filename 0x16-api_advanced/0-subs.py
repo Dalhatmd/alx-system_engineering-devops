@@ -6,7 +6,10 @@ import json
 
 def number_of_subscribers(subreddit):
     """ returns the number of subscribers in subreddit """
-    header = {'User-Agent': 'Alx-Student'}
+
+    if type(subreddit) != str or subreddit is None:
+        return 0
+    header = {'User-Agent':  'Google Chrome Version 81.0.4044.129'}
 
     url = f'https://www.reddit.com/r/{subreddit}/about.json'
 
